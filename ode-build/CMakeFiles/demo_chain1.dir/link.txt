@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/demo_chain1.dir/ode/demo/demo_chain1.c.o  -o demo_chain1 -Wl,-rpath,/home/dieu_detruit/3A/simulation/ode/ode-0.16/ode-build libdrawstuff.so -lm libode.so.0.16.0 -lpthread -lGL -lGLU -lSM -lICE -lX11 -lXext 

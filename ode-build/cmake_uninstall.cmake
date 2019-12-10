@@ -1,0 +1,17 @@
+if(NOT EXISTS "/home/dieu_detruit/3A/simulation/ode/ode-0.16/ode-build/install_manifest.txt")
+	message(FATAL_ERROR "Cannot find install manifest: \"/home/dieu_detruit/3A/simulation/ode/ode-0.16/ode-build/install_manifest.txt\"")
+endif()
+
+file(READ "/home/dieu_detruit/3A/simulation/ode/ode-0.16/ode-build/install_manifest.txt" FILES)
+string(REGEX REPLACE "\n" ";" FILES "${FILES}")
+
+foreach(FILE ${FILES})
+	message(STATUS "Uninstalling: ${FILE}")
+	if(EXISTS "${FILE}")
+		file(REMOVE ${FILE})
+	elseif(IS_SYMLINK "${FILE}")
+		file(REMOVE ${FILE})
+	else()
+		message(STATUS "File \"${FILE}\" does not exist.")
+	endif()
+endforeach()

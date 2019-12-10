@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/lesson3.dir/ode/lesson/lesson3.cpp.o  -o lesson3 -Wl,-rpath,/home/dieu_detruit/3A/simulation/ode/ode-0.16/ode-build libdrawstuff.so libode.so.0.16.0 -lpthread -lGL -lGLU -lSM -lICE -lX11 -lXext 
